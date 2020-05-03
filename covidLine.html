@@ -1,0 +1,66 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', '# New Cases Each Day', '# Total Cases'],
+          ['3/13', 4, 4],
+          ['3/14', 6, 10],
+          ['3/16', 7, 17],
+          ['3/17', 16, 33],
+          ['3/18', 8, 41],
+          ['3/19', 32, 73],
+          ['3/20', 31, 104],
+          ['3/21', 53, 157],
+          ['3/22', 51, 208],
+          ['3/23', 72, 280],
+          ['3/24', 113, 393],
+          ['3/25', 172, 565],
+          ['3/26', 192, 757],
+          ['3/27', 223, 980],
+          ['3/28', 144, 1124],
+          ['3/29', 215, 1339],
+          ['3/30', 243, 1582],
+          ['3/31', 362, 1944],
+          ['4/1',  419, 2363],
+          ['4/2',  362, 2725],
+          ['4/3',  505, 3230],
+          ['4/4',  522, 3752],
+          ['4/5',  390, 4142],
+          ['4/6',  535, 4677],
+          ['4/7',  500, 5177],
+          ['4/8',  548, 5725],
+          ['4/9',  548, 6273],
+          ['4/10', 551, 6824],
+          ['4/11', 391, 7215],
+          ['4/12', 393, 7608],
+          ['4/13', 248, 7856],
+          ['4/14', 367, 8223],
+          ['4/15', 579, 8802],
+          ['4/16', 494, 9296],
+          ['4/17', 546, 9842],
+          ['4/18', 259, 10101],
+          ['4/19', 246, 10347],
+          ['4/20', 450, 10797]
+        ]);
+
+        var options = {
+          title: 'Number of Positive COVID-19 Cases in Philadelphia: March 13th - April 20th 2020',
+          colors: ['#C39BD3', '#78281F'],
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 1000px; height: 500px"></div>
+  </body>
+</html>
